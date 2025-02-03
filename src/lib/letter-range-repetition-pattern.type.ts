@@ -1,6 +1,7 @@
 // Type.
 import { LetterRangeRepetition } from './letter-range-repetition.type';
-import { RegExpFlags } from './regexp-flags.type';
+import { RegExpFlag } from './regexp-flag.type';
+import { PatternFlag } from './pattern-flag.type';
 /**
  * @description The representation of a letter range with optional quantity constraints, suitable for use in `RegExp` patterns.
  * @example
@@ -12,16 +13,16 @@ import { RegExpFlags } from './regexp-flags.type';
  * @template {string} [To='z'] - The ending letter in the range, defaults to 'z'.
  * @template {string} [Character=''] - An optional string of additional characters that will be escaped and appended to the range.
  * @template {boolean} [Negated=false] - A flag that indicates if the character class should be negated. If true, a caret (^) is added immediately after the opening bracket.
- * @template {number | ''} [Min=''] - The minimum repetition count (optional).
+ * @template {number | '' | '*' | '+' | '?'} [Min=''] - The minimum repetition count (optional).
  * @template {number | ''} [Max=''] - The maximum repetition count (optional).
- * @template {RegExpFlags | ''} [Flag='g'] 
+ * @template {RegExpFlag[]} [Flags=[]] 
  */
 export type LetterRangeRepetitionPattern<
   From extends string = 'a',
   To extends string = 'z',
   Character extends string = '',
   Negated extends boolean = false,
-  Min extends number | '' = '',
+  Min extends number | '' | '*' | '+' | '?' = '',
   Max extends number | '' = '',
-  Flag extends RegExpFlags | '' = 'g'
-> = `/${LetterRangeRepetition<From, To, Character, Negated, Min, Max>}/${Flag}`;
+  Flags extends RegExpFlag[] = []
+> = `/${LetterRangeRepetition<From, To, Character, Negated, Min, Max>}/${PatternFlag<Flags>}`;
