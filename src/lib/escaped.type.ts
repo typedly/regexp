@@ -45,5 +45,5 @@ export type Escaped<
     ? `\\{${Escaped<Rest>}`
     : First extends '}'
     ? `\\}${Escaped<Rest>}`
-    : never
+    : First
   : '';
