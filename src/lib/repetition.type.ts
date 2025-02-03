@@ -26,4 +26,4 @@ export type Repetition<
   ? '?' // Matches 0 or 1 time
   : Min extends ''
   ? (Max extends '' ? '' : `{,${Max}}`) // When only Max is set
-  : (Max extends '' ? `{${Min}}` : `{${Min},${Max}}`);
+  : (Max extends '' ? `{${Min},}` : `{${Min},${Max}}`);
