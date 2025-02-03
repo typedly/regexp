@@ -19,26 +19,31 @@ A **TypeScript** type definitions package for `RegExp`.
 
 - [Installation](#installation)
 - [Api](#api)
-  - `Escaped`,
-  - `RegExpFlags`,
+  - `Escaped`
+
+  - **Flag**
+  - `Flag`
+  - `RegExpFlag`
+  - `IncludeFlag`
+  - `PatternFlag`
 
   - **LetterRange**
-  - `LetterRangeExclusion`,
-  - `LetterRangeRepetitionPattern`,
-  - `LetterRangeRepetition`,
-  - `LetterRangeTuple`,
+  - `LetterRangeExclusion`
+  - `LetterRangeRepetitionPattern`
+  - `LetterRangeRepetition`
+  - `LetterRangeTuple`
 
   - **Lowercase**
-  - `LowercaseLetterRange`,
-  - `LowercaseLetterRangePattern`,
+  - `LowercaseLetterRange`
+  - `LowercaseLetterRangePattern`
 
   - **MultiLetter**
-  - `MultiLetterRange`,
-  - `MultiLetterRangeRepetition`,
+  - `MultiLetterRange`
+  - `MultiLetterRangeRepetition`
 
   - **UpperLetter**
-  - `UppercaseLetterRange`,
-  - `UppercaseLetterRangePattern`,
+  - `UppercaseLetterRange`
+  - `UppercaseLetterRangePattern`
 - [Contributing](#contributing)
 - [Support](#support)
 - [Code of Conduct](#code-of-conduct)
@@ -58,7 +63,12 @@ npm install @typedly/regexp --save-peer
 ```typescript
 import {
   Escaped,
-  RegExpFlags,
+
+  // Flag.
+  Flag,
+  RegExpFlag,
+  IncludeFlag,
+  PatternFlag,
 
   // Repetition.
   Repetition,
@@ -81,6 +91,56 @@ import {
   UppercaseLetterRange,
   UppercaseLetterRangePattern,
 } from '@typedly/regexp';
+```
+
+### `Escaped`
+
+```typescript
+import { Escaped } from '@typedly/regexp';
+
+const valid1: Escaped<'dws'> = '\\d\\w\\s'; // '\\d\\w\\s'
+const valid2: Escaped<'*Dws'> = '\\*\\D\\w\\s'; // '\\*\\D\\w\\s'
+const valid3: Escaped<'^d+*w$'> = '\\^\\d\\+\\*\\w\\$'; // '\\^\\d\\+\\*\\w\\$'
+```
+
+### `RegExpFlags`
+
+```typescript
+import { RegExpFlags } from '@typedly/regexp';
+
+const g: RegExpFlags = 'g';
+const i: RegExpFlags = 'i';
+const m: RegExpFlags = 'm';
+const u: RegExpFlags = 'u';
+const y: RegExpFlags = 'y';
+```
+
+### `Repetition`
+
+```typescript
+import { Repetition } from '@typedly/regexp';
+
+type ZeroOrMore = Repetition<'*'>; // Output: "*"
+type OneOrMore = Repetition<'+'>; // Output: "+"
+type ZeroOrOne = Repetition<'?'>; // Output: "?"
+type ExactlyThree = Repetition<3>; // Output: "{3}"
+type TwoToFourTimes = Repetition<2, 4>; // Output: "{2,4}"
+type AtLeastFive = Repetition<5, ''>; // Output: "{5,}"
+```
+
+### `LetterRangeExclusion`
+
+```typescript
+import { LetterRangeExclusion } from '@typedly/regexp';
+
+type ExcludedLowercase = LetterRangeExclusion; // Resolves to "[^a-z]
+type ExcludedVowels = LetterRangeExclusion<'a', 'u'>; // Resolves to "[^a-u]"
+// Using the type in a variable
+const pattern: ExcludedLowercase = "[^a-z]";  // This matches any character not in a-z
+// If you log the pattern or use it in a RegExp, it will exclude lowercase letters:
+const regex = new RegExp(pattern);
+regex.test("B");  // true, because 'B' is not a lowercase letter
+regex.test("b");  // false, because 'b' is a lowercase letter
 ```
 
 ## Contributing
