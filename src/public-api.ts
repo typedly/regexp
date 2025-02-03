@@ -4,7 +4,12 @@
 
 export type {
   Escaped,
-  RegExpFlags,
+
+  // Flag.
+  Flag,
+  RegExpFlag,
+  IncludeFlag,
+  PatternFlag,
 
   // Repetition.
   Repetition,

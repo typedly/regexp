@@ -1,5 +1,10 @@
 export type { Escaped } from './escaped.type';
-export type { RegExpFlags } from './regexp-flags.type';
+
+// Flag.
+export type { Flag } from './flag.type';
+export type { IncludeFlag } from './include-flag.type';
+export type { RegExpFlag } from './regexp-flag.type';
+export type { PatternFlag } from './pattern-flag.type';
 
 // Repetition.
 export type { Repetition } from './repetition.type';
