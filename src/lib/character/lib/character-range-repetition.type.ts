@@ -1,5 +1,6 @@
 // Type.
 import { CharacterRange } from "./character-range.type";
+import { Quantifier } from "../../quantifier.type";
 import { Repetition } from "../../repetition.type";
 /**
  * @description
@@ -15,7 +16,7 @@ import { Repetition } from "../../repetition.type";
  * @template {string | number} [To='z'] 
  * @template {string} [Character=''] 
  * @template {boolean} [Negated=false] 
- * @template {number | '' | '*' | '+' | '?'} [Min=''] 
+ * @template {number | '' | Quantifier} [Min=''] 
  * @template {number | ''} [Max=''] 
  */
 export type CharacterRangeRepetition<
@@ -23,6 +24,6 @@ export type CharacterRangeRepetition<
   To extends string | number = 'z',
   Character extends string = '',
   Negated extends boolean = false,
-  Min extends number | '' | '*' | '+' | '?' = '',
+  Min extends number | '' | Quantifier = '',
   Max extends number | '' = ''
 > = `${CharacterRange<From, To, Character, Negated>}${Repetition<Min, Max>}`;
