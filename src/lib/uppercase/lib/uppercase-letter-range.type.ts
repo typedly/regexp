@@ -1,6 +1,6 @@
 // Type.
-import { LetterRange } from './letter-range.type';
-import { Repetition } from './repetition.type';
+import { LetterRange } from '../../letter/lib/letter-range.type';
+import { Repetition } from '../../repetition.type';
 import { UppercaseLetter } from '@typedly/letter';
 /**
  * @description
