@@ -1,8 +1,8 @@
 // Type.
 import { RegExpFlag } from '../../flag/lib/regexp-flag.type';
+import { RegExpPattern } from '../../regexp-pattern.type';
 import { UppercaseLetter } from '@typedly/letter';
 import { UppercaseLetterRange } from './uppercase-letter-range.type';
-import { FlagString, PatternFlag } from '../../flag';
 /**
  * @description
  * @export
@@ -22,10 +22,4 @@ export type UppercaseLetterRangePattern<
   Min extends number | '' | '*' | '+' | '?' = '',
   Max extends number | '' = '',
   Flags extends RegExpFlag[] = []
-> = `/${UppercaseLetterRange<From, To, Character, Negated, Min, Max>}/${PatternFlag<Flags>}`;
-
-
-// const a: UppercaseLetterRangePattern<'A', 'Z', '_', false, 1, 2, ['i']>;
-
-
-type Test = UppercaseLetterRangePattern<'A', 'Z', '_'>;
+> = RegExpPattern<UppercaseLetterRange<From, To, Character, Negated, Min, Max>, Flags>;
