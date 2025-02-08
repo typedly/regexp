@@ -1,5 +1,6 @@
 // Type.
-import { Escaped } from "./escaped.type";
+import { Escaped } from "../../escaped.type";
+import { FromTo } from "../../from-to.type";
 /**
  * @description Represents a range of letters, suitable for use in `RegExp` patterns.
  * The type allows specifying a range from `From` to `To`.
@@ -21,4 +22,4 @@ export type LetterRange<
   To extends string = 'z',
   Character extends string = '',
   Negated extends boolean = false
-> =`[${Negated extends true ? '^': ''}${From}-${To}${Escaped<Character>}]`;
+> =`[${Negated extends true ? '^': ''}${FromTo<From, To>}${Escaped<Character>}]`;
