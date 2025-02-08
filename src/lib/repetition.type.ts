@@ -1,3 +1,5 @@
+// Type.
+import { Quantifier } from "./quantifier.type";
 /**
  * @description The type represents the repetition of a pattern with an optional `Min` and `Max` value for repetitions. 
  * This allows defining how many times a character (or a pattern) should appear, where the quantity can be either exact or a range.
@@ -12,11 +14,11 @@
  * type TwoToFourTimes = Repetition<2, 4>; // Output: "{2,4}"
  * type AtLeastFive = Repetition<5, ''>; // Output: "{5,}"
  * @export
- * @template {number | '' | '*' | '+' | '?'} [Min=''] - The minimum number of repetitions (optional).
+ * @template {number | '' | Quantifier} [Min=''] - The minimum number of repetitions (optional).
  * @template {number | ''} [Max=''] - The maximum number of repetitions (optional).
  */
 export type Repetition<
-  Min extends number | '' | '*' | '+' | '?' = '',
+  Min extends number | '' | Quantifier = '',
   Max extends number | '' = ''
 > = Min extends '*'
   ? '*' // Matches 0 or more times
