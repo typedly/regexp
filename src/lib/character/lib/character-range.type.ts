@@ -11,14 +11,14 @@ import { FromTo } from "../../from-to.type";
  * const example4: CharacterRange<'', ''>  = '[]'; // "[]"
  * const example5: CharacterRange<'a', 'z', '_'> = '[a-z_]'; // "[a-z_]"
  * const example6: CharacterRange<'', '', '_'> = '[_]'; // "[_]"
- * @template {string | number} [From=''] 
- * @template {string | number} [To=''] 
+ * @template {string | number} [From='a'] 
+ * @template {string | number} [To='z'] 
  * @template {string} [Character=''] 
  * @template {boolean} [Negated=false] 
  */
 export type CharacterRange<
-  From extends string | number = '',
-  To extends string | number = '',
+  From extends string | number = 'a',
+  To extends string | number = 'z',
   Character extends string = '',
   Negated extends boolean = false
 > = `[${Negated extends true ? '^' : ''}${FromTo<From, To>}${Escaped<Character>}]`;
