@@ -12,7 +12,7 @@
  * type TwoToFourTimes = Repetition<2, 4>; // Output: "{2,4}"
  * type AtLeastFive = Repetition<5, ''>; // Output: "{5,}"
  * @export
- * @template {number | ''} [Min=''] - The minimum number of repetitions (optional).
+ * @template {number | '' | '*' | '+' | '?'} [Min=''] - The minimum number of repetitions (optional).
  * @template {number | ''} [Max=''] - The maximum number of repetitions (optional).
  */
 export type Repetition<
