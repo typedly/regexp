@@ -1,8 +1,8 @@
 // Type.
 import { LowercaseLetter } from '@typedly/letter';
 import { LowercaseLetterRange } from './lowercase-letter-range.type';
-import { RegExpFlag } from '../../flag/lib/regexp-flag.type';
-import { PatternFlag } from '../../flag/lib/pattern-flag.type';
+import { RegExpFlag } from '../../flag';
+import { RegExpPattern } from '../../regexp-pattern.type';
 /**
  * @description
  * @export
@@ -22,4 +22,6 @@ export type LowercaseLetterRangePattern<
   Min extends number | '' | '*' | '+' | '?' = '',
   Max extends number | '' = '',
   Flags extends RegExpFlag[] = []
-> = `/${LowercaseLetterRange<From, To, Character, Negated, Min, Max>}/${PatternFlag<Flags>}`;
+> = RegExpPattern<LowercaseLetterRange<From, To, Character, Negated, Min, Max>, Flags>;
+
+
