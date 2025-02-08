@@ -1,5 +1,7 @@
+// TYpe.
+import { AlphabeticLetter } from "@typedly/letter";
 /**
  * @description
  * @export
  */
-export type LetterRangeTuple = [string, string, number | '', number | ''];
+export type LetterRangeTuple = [AlphabeticLetter, AlphabeticLetter, number | '', number | ''];
