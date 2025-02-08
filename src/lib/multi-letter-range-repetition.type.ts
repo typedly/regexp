@@ -1,5 +1,5 @@
 // Type.
-import { LetterRangeTuple } from "./letter-range-tuple.type";
+import { LetterRangeTuple } from "./letter/lib/letter-range-tuple.type";
 /**
  * @description
  * @export
