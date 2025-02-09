@@ -19,45 +19,46 @@ A **TypeScript** type definitions package for `RegExp`.
 
 - [Installation](#installation)
 - [Api](#api)
-  - `Escaped`
-  - `FromTo`
-  - `NonCapturingRepetition`
-  - `Quantifier`
-  - `Range`
-  - `RegExpPattern`
-  - `Repetition`
+  - **Core Types
+    - `Escaped`
+    - `FromTo`
+    - `NonCapturingRepetition`
+    - `Quantifier`
+    - `Range`
+    - `RegExpPattern`
+    - `Repetition`
 
   - **Character**
-  - `CharacterRange`
-  - `CharacterRangeRepetition`
+    - `CharacterRange`
+    - `CharacterRangeRepetition`
 
   - **Flag**
-  - `AppendFlag`
-  - `FlagString`
-  - `IncludeFlag`
-  - `IncludeFlags`
-  - `PrependFlag`
-  - `RegExpFlag`
-  - `RemoveFlag`
+    - `AppendFlag`
+    - `FlagString`
+    - `IncludeFlag`
+    - `IncludeFlags`
+    - `PrependFlag`
+    - `RegExpFlag`
+    - `RemoveFlag`
 
-  - **LetterRange**
-  - `LetterRange`
-  - `LetterRangeExclusion`
-  - `LetterRangeRepetition`
-  - `LetterRangeRepetitionPattern`
-  - `LetterRangeTuple`
+  - **Letter Ranges**
+    - `LetterRange`
+    - `LetterRangeExclusion`
+    - `LetterRangeRepetition`
+    - `LetterRangeRepetitionPattern`
+    - `LetterRangeTuple`
 
-  - **Lowercase**
-  - `LowercaseLetterRange`
-  - `LowercaseLetterRangePattern`
+  - **Lowercase Ranges**
+    - `LowercaseLetterRange`
+    - `LowercaseLetterRangePattern`
 
-  - **MultiLetter**
-  - `MultiLetterRange`
-  - `MultiLetterRangeRepetition`
+  - **Multiple Ranges**
+    - `MultiLetterRange`
+    - `MultiLetterRangeRepetition`
 
-  - **UpperLetter**
-  - `UppercaseLetterRange`
-  - `UppercaseLetterRangePattern`
+  - **Uppercase Ranges**
+    - `UppercaseLetterRange`
+    - `UppercaseLetterRangePattern`
 - [Contributing](#contributing)
 - [Support](#support)
 - [Code of Conduct](#code-of-conduct)
