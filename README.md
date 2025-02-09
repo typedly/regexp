@@ -63,20 +63,31 @@ npm install @typedly/regexp --save-peer
 ```typescript
 import {
   Escaped,
-
-  // Flag.
-  Flag,
-  RegExpFlag,
-  IncludeFlag,
-  PatternFlag,
-
-  // Repetition.
+  FromTo,
+  NonCapturingRepetition,
+  Quantifier,
+  Range,
+  RegExpPattern,
   Repetition,
 
+  // Character.
+  CharacterRange,
+  CharacterRangeRepetition,
+
+  // Flag.
+  AppendFlag,
+  FlagString,
+  IncludeFlag,
+  IncludeFlags,
+  PrependFlag,
+  RegExpFlag,
+  RemoveFlag,
+
   // LetterRange
+  LetterRange,
   LetterRangeExclusion,
-  LetterRangeRepetitionPattern,
   LetterRangeRepetition,
+  LetterRangeRepetitionPattern,
   LetterRangeTuple,
 
   // Lowercase
