@@ -20,17 +20,31 @@ A **TypeScript** type definitions package for `RegExp`.
 - [Installation](#installation)
 - [Api](#api)
   - `Escaped`
+  - `FromTo`
+  - `NonCapturingRepetition`
+  - `Quantifier`
+  - `Range`
+  - `RegExpPattern`
+  - `Repetition`
+
+  - **Character**
+  - `CharacterRange`
+  - `CharacterRangeRepetition`
 
   - **Flag**
-  - `Flag`
-  - `RegExpFlag`
+  - `AppendFlag`
+  - `FlagString`
   - `IncludeFlag`
-  - `PatternFlag`
+  - `IncludeFlags`
+  - `PrependFlag`
+  - `RegExpFlag`
+  - `RemoveFlag`
 
   - **LetterRange**
+  - `LetterRange`
   - `LetterRangeExclusion`
-  - `LetterRangeRepetitionPattern`
   - `LetterRangeRepetition`
+  - `LetterRangeRepetitionPattern`
   - `LetterRangeTuple`
 
   - **Lowercase**
@@ -54,6 +68,18 @@ A **TypeScript** type definitions package for `RegExp`.
 
 ## Installation
 
+### 1. Install Peer Dependencies
+
+Before installing the package, ensure that all required peer dependencies are installed:
+
+```bash
+npm install @typedly/letter --save-peer
+```
+
+### 2. Install the package
+
+Now, install the package:
+
 ```bash
 npm install @typedly/regexp --save-peer
 ```
@@ -70,11 +96,11 @@ import {
   RegExpPattern,
   Repetition,
 
-  // Character.
+  // Character
   CharacterRange,
   CharacterRangeRepetition,
 
-  // Flag.
+  // Flag
   AppendFlag,
   FlagString,
   IncludeFlag,
@@ -114,16 +140,16 @@ const valid2: Escaped<'*Dws'> = '\\*\\D\\w\\s'; // '\\*\\D\\w\\s'
 const valid3: Escaped<'^d+*w$'> = '\\^\\d\\+\\*\\w\\$'; // '\\^\\d\\+\\*\\w\\$'
 ```
 
-### `RegExpFlags`
+### `RegExpFlag`
 
 ```typescript
 import { RegExpFlags } from '@typedly/regexp';
 
-const g: RegExpFlags = 'g';
-const i: RegExpFlags = 'i';
-const m: RegExpFlags = 'm';
-const u: RegExpFlags = 'u';
-const y: RegExpFlags = 'y';
+const g: RegExpFlag = 'g';
+const i: RegExpFlag = 'i';
+const m: RegExpFlag = 'm';
+const u: RegExpFlag = 'u';
+const y: RegExpFlag = 'y';
 ```
 
 ### `Repetition`
@@ -137,6 +163,13 @@ type ZeroOrOne = Repetition<'?'>; // Output: "?"
 type ExactlyThree = Repetition<3>; // Output: "{3}"
 type TwoToFourTimes = Repetition<2, 4>; // Output: "{2,4}"
 type AtLeastFive = Repetition<5, ''>; // Output: "{5,}"
+
+const zeroOrMore: ZeroOrMore = '*';
+const oneOrMore: OneOrMore = '+';
+const zeroOrOne: ZeroOrOne = '?';
+const exactlyThree: ExactlyThree = '{3,}';
+const twoToFourTimes: TwoToFourTimes = '{2,4}';
+const atLeastFive: AtLeastFive = '{5,}';
 ```
 
 ### `LetterRangeExclusion`
