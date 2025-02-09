@@ -20,4 +20,4 @@ import { FromTo } from "../../from-to.type";
 export type LetterRangeExclusion<
   From extends AlphabeticLetter = 'a',
   To extends AlphabeticLetter = 'z'
-> = `[^${FromTo<From, To>}]`;
+> = `[${FromTo<From, To, true>}]`;
