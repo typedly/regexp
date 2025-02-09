@@ -24,13 +24,10 @@ export type {
 } from './letter';
 
 // Lowercase.
-export type { LowercaseLetterRange } from './lowercase/lib/lowercase-letter-range.type';
-export type { LowercaseLetterRangePattern } from './lowercase/lib/lowercase-letter-range-pattern.type';
+export type { LowercaseLetterRange, LowercaseLetterRangePattern } from './lowercase';
 
 // Multi letter.
-export type { MultiLetterRange } from './multi-letter-range.type';
-export type { MultiLetterRangeRepetition } from './multi-letter-range-repetition.type';
+export type { MultiLetterRange, MultiLetterRangeRepetition } from './multi';
 
 // Uppercase.
-export type { UppercaseLetterRange } from './uppercase/lib/uppercase-letter-range.type';
-export type { UppercaseLetterRangePattern } from './uppercase/lib/uppercase-letter-range-pattern.type';
+export type { UppercaseLetterRange, UppercaseLetterRangePattern } from './uppercase';
