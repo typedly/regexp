@@ -1,29 +1,43 @@
 export type { Escaped } from './escaped.type';
-
-// Flag.
-export type { Flag } from './flag.type';
-export type { IncludeFlag } from './include-flag.type';
-export type { RegExpFlag } from './regexp-flag.type';
-export type { PatternFlag } from './pattern-flag.type';
-
-// Repetition.
+export type { FromTo } from './from-to.type';
+export type { NonCapturingRepetition } from './non-capturing-repetition.type';
+export type { Quantifier } from './quantifier.type';
+export type { Range } from './range.type';
+export type { RegExpPattern } from './regexp-pattern.type';
 export type { Repetition } from './repetition.type';
 
+// Character.
+export type {
+  CharacterRange,
+  CharacterRangeRepetition
+} from './character';
+
+// Flag.
+export type {
+  AppendFlag,
+  FlagString,
+  IncludeFlag,
+  IncludeFlags,
+  PrependFlag,
+  RegExpFlag,
+  RemoveFlag
+} from './flag';
+
+
 // Letter range.
-export type { LetterRange } from './letter-range.type';
-export type { LetterRangeExclusion } from './letter-range-exclusion.type';
-export type { LetterRangeRepetition } from './letter-range-repetition.type';
-export type { LetterRangeRepetitionPattern } from './letter-range-repetition-pattern.type';
-export type { LetterRangeTuple } from './letter-range-tuple.type';
+export type {
+  LetterRange,
+  LetterRangeExclusion,
+  LetterRangeRepetition,
+  LetterRangeRepetitionPattern,
+  LetterRangeTuple
+} from './letter';
 
 // Lowercase.
-export type { LowercaseLetterRange } from './lowercase-letter-range.type';
-export type { LowercaseLetterRangePattern } from './lowercase-letter-range-pattern.type';
+export type { LowercaseLetterRange, LowercaseLetterRangePattern } from './lowercase';
 
 // Multi letter.
-export type { MultiLetterRange } from './multi-letter-range.type';
-export type { MultiLetterRangeRepetition } from './multi-letter-range-repetition.type';
+export type { MultiLetterRange, MultiLetterRangeRepetition } from './multi';
 
 // Uppercase.
-export type { UppercaseLetterRange } from './uppercase-letter-range.type';
-export type { UppercaseLetterRangePattern } from './uppercase-letter-range-pattern.type';
+export type { UppercaseLetterRange, UppercaseLetterRangePattern } from './uppercase';
