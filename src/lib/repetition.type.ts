@@ -1,4 +1,5 @@
 // Type.
+import { MinMax } from "./min-max.type";
 import { Quantifier } from "./quantifier.type";
 /**
  * @description The type represents the repetition of a pattern with an optional `Min` and `Max` value for repetitions. 
@@ -26,6 +27,4 @@ export type Repetition<
   ? '+' // Matches 1 or more times
   : Min extends '?'
   ? '?' // Matches 0 or 1 time
-  : Min extends ''
-  ? (Max extends '' ? '' : `{,${Max}}`) // When only Max is set
-  : (Max extends '' ? `{${Min},}` : `{${Min},${Max}}`);
+  : MinMax<Min, Max>;
