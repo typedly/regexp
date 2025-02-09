@@ -1,10 +1,11 @@
 // Type.
 import { LetterRange } from '../..';
+import { AlphabeticLetter } from "@typedly/letter";
 
 
 function buildLetterRange<
-  From extends string = '',
-  To extends string = '',
+  From extends AlphabeticLetter = 'a',
+  To extends AlphabeticLetter = 'z',
   Character extends string = '',
   Negated extends boolean = false
 >(
@@ -15,13 +16,5 @@ function buildLetterRange<
 ): LetterRange<From, To, Character, Negated> {
   return `[${negated ? '^' : ''}${from}-${to}${character ? `\\${character}` : ''}]` as LetterRange<From, To, Character, Negated>;
 }
-
-// const source = <
-//   From extends string = '',
-//   To extends string = '',
-//   Escaped extends string = ''
-// >(from: From, to: To, escaped: Escaped): LetterRange<From, To, Escaped> => {
-//   return new RegExp(`[${from}-${to}]`) as any;
-// }
 
 console.log(buildLetterRange('a', 'z', 'dws'));
