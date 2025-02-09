@@ -19,7 +19,7 @@ A **TypeScript** type definitions package for `RegExp`.
 
 - [Installation](#installation)
 - [Api](#api)
-  - **Core Types
+  - **Core Types**
     - `Escaped`
     - `FromTo`
     - `NonCapturingRepetition`
