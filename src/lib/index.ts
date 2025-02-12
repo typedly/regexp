@@ -1,6 +1,7 @@
 export type { Escaped } from './escaped.type';
 export type { EscapedArray } from './escaped-array.type';
 export type { EscapedString } from './escaped-string.type';
+export type { EscapedStringFromArray } from './escaped-string-from-array.type';
 export type { FromTo } from './from-to.type';
 export type { NonCapturingRepetition } from './non-capturing-repetition.type';
 export type { Quantifier } from './quantifier.type';
