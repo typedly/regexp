@@ -6,6 +6,7 @@ export type {
   Escaped,
   EscapedArray,
   EscapedString,
+  EscapedStringFromArray,
   FromTo,
   NonCapturingRepetition,
   Quantifier,

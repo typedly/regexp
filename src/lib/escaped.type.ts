@@ -11,10 +11,9 @@ import { EscapedString } from "./escaped-string.type";
  * type TestArray = Escaped<['d+', '*', 'W']>;
  * // Expected: ["\\d\\+", "\\*", "\\W"]
  */
-export type Escaped<Character extends string | string[]> =
+export type Escaped<Character extends string | string[] = ''> =
   Character extends string
     ? EscapedString<Character>
     : Character extends string[]
     ? EscapedArray<Character>
     : never;
-    

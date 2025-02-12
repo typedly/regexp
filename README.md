@@ -23,6 +23,7 @@ A **TypeScript** type definitions package for `RegExp`.
     - `Escaped`
     - `EscapedArray`
     - `EscapedString`
+    - `EscapedStringFromArray`
     - `FromTo`
     - `NonCapturingRepetition`
     - `Quantifier`
