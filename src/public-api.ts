@@ -4,6 +4,8 @@
 
 export type {
   Escaped,
+  EscapedArray,
+  EscapedString,
   FromTo,
   NonCapturingRepetition,
   Quantifier,
