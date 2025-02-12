@@ -1,6 +1,6 @@
 {
   "name": "@typedly/regexp",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "author": "wwwdev.io <dev@wwwdev.io>",
   "description": "A TypeScript type definitions package for `RegExp`.",
   "license": "MIT",

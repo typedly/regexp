@@ -21,6 +21,8 @@ A **TypeScript** type definitions package for `RegExp`.
 - [Api](#api)
   - **Core Types**
     - `Escaped`
+    - `EscapedArray`
+    - `EscapedString`
     - `FromTo`
     - `NonCapturingRepetition`
     - `Quantifier`
@@ -90,6 +92,8 @@ npm install @typedly/regexp --save-peer
 ```typescript
 import {
   Escaped,
+  EscapedArray,
+  EscapedString,
   FromTo,
   NonCapturingRepetition,
   Quantifier,

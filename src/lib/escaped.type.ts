@@ -1,49 +1,20 @@
+// Type.
+import { EscapedArray } from "./escaped-array.type";
+import { EscapedString } from "./escaped-string.type";
 /**
- * @description The type to build the regexp escaped characters of
- * 'd', 'D', 'w', 'W', 's', 'S', '+', '?', '^', '$', '(' , ')', '[', ']', '|', '{', '}'
- * @example
- * For example, using `Escaped<'d+w'>` will produce the literal string `"\\d\\+\\w"`.
+ * @description Escapes special characters in either a `string` or an `array` of strings.
  * @export
- * @template {string} Character 
+ * @template {string | string[]} Character 
+ * @example
+ * type TestString = Escaped<'d+*'>; 
+ * // Expected: "\\d\\+\\*"
+ * type TestArray = Escaped<['d+', '*', 'W']>;
+ * // Expected: ["\\d\\+", "\\*", "\\W"]
  */
-export type Escaped<
-  Character extends string = ''
-> = Character extends `${infer First}${infer Rest}`
-  ? First extends '*'
-    ? `\\*${Escaped<Rest>}`
-    : First extends 'd'
-    ? `\\d${Escaped<Rest>}`
-    : First extends 'D'
-    ? `\\D${Escaped<Rest>}`
-    : First extends 'w'
-    ? `\\w${Escaped<Rest>}`
-    : First extends 'W'
-    ? `\\W${Escaped<Rest>}`
-    : First extends 's'
-    ? `\\s${Escaped<Rest>}`
-    : First extends 'S'
-    ? `\\S${Escaped<Rest>}`
-    : First extends '+'
-    ? `\\+${Escaped<Rest>}`
-    : First extends '?'
-    ? `\\?${Escaped<Rest>}`
-    : First extends '^'
-    ? `\\^${Escaped<Rest>}`
-    : First extends '$'
-    ? `\\$${Escaped<Rest>}`
-    : First extends '('
-    ? `\\(${Escaped<Rest>}`
-    : First extends ')'
-    ? `\\)${Escaped<Rest>}`
-    : First extends '['
-    ? `\\[${Escaped<Rest>}`
-    : First extends ']'
-    ? `\\]${Escaped<Rest>}`
-    : First extends '|'
-    ? `\\|${Escaped<Rest>}`
-    : First extends '{'
-    ? `\\{${Escaped<Rest>}`
-    : First extends '}'
-    ? `\\}${Escaped<Rest>}`
-    : First
-  : '';
+export type Escaped<Character extends string | string[]> =
+  Character extends string
+    ? EscapedString<Character>
+    : Character extends string[]
+    ? EscapedArray<Character>
+    : never;
+    
